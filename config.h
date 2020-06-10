@@ -37,7 +37,6 @@ static const Rule rules[] = {
 	{ "Gimp",           NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Thunderbird",    NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "Alacritty",      NULL,     NULL,           0,         0,          1,          -1,        -1 },
-	{ "NULL",           NULL,     "matrix",       0,         0,          1,          -1,        1 },
 	{ NULL,             NULL,     "Event Tester", 0,         1,          0,           1,        -1 }, /* xev */
 };
 
