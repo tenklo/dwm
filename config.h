@@ -33,13 +33,13 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class            instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",           NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "Thunderbird",    NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "whatsapp-nativefier-d40211",    NULL,     NULL,           1 << 7,    0,          0,          -1,        -1 },
-	{ "telegram-desktop",    NULL,     NULL,           1 << 7,    0,          0,          -1,        -1 },
-	{ "Alacritty",      NULL,     NULL,           0,         0,          1,          -1,        -1 },
-	{ NULL,             NULL,     "Event Tester", 0,         1,          0,           1,        -1 }, /* xev */
+	/* class                             instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
+	{ "Gimp",                            NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "Thunderbird",                     NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
+	{ "whatsapp-nativefier-d40211",      NULL,     NULL,           1 << 7,    0,          0,          -1,        -1 },
+	{ "TelegramDesktop",                 NULL,     NULL,           1 << 7,    0,          0,          -1,        -1 },
+	{ "Alacritty",                       NULL,     NULL,           0,         0,          1,          -1,        -1 },
+	{ NULL,                              NULL,     "Event Tester", 0,         1,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
