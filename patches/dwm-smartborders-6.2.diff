@@ -3,7 +3,7 @@ index 4465af1..3c94e4b 100644
 --- a/dwm.c
 +++ b/dwm.c
 @@ -143,7 +143,7 @@ typedef struct {
- 
+
  /* function declarations */
  static void applyrules(Client *c);
 -static int applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact);
@@ -24,7 +24,7 @@ index 4465af1..3c94e4b 100644
  static void run(void);
 @@ -312,7 +312,7 @@ applyrules(Client *c)
  }
- 
+
  int
 -applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact)
 +applysizehints(Client *c, int *x, int *y, int *w, int *h, int *bw, int interact)
@@ -61,7 +61,7 @@ index 4465af1..3c94e4b 100644
 -	return *x != c->x || *y != c->y || *w != c->w || *h != c->h;
 +	return *x != c->x || *y != c->y || *w != c->w || *h != c->h || *bw != c->bw;
  }
- 
+
  void
 @@ -394,9 +394,16 @@ arrange(Monitor *m)
  void
@@ -78,7 +78,7 @@ index 4465af1..3c94e4b 100644
 +			if (ISVISIBLE(c) && c->bw == 0)
 +				resize(c, c->x, c->y, c->w - 2*borderpx, c->h - 2*borderpx, borderpx, 0);
  }
- 
+
  void
 @@ -566,7 +573,7 @@ configurenotify(XEvent *e)
  			for (m = mons; m; m = m->next) {
@@ -96,7 +96,7 @@ index 4465af1..3c94e4b 100644
 -		resize(c, m->wx, m->wy, m->ww - 2 * c->bw, m->wh - 2 * c->bw, 0);
 +		resize(c, m->wx, m->wy, m->ww, m->wh, 0, 0);
  }
- 
+
  void
 @@ -1180,7 +1187,7 @@ movemouse(const Arg *arg)
  			&& (abs(nx - c->x) > snap || abs(ny - c->y) > snap))
@@ -109,7 +109,7 @@ index 4465af1..3c94e4b 100644
  	} while (ev.type != ButtonRelease);
 @@ -1266,14 +1273,14 @@ recttomon(int x, int y, int w, int h)
  }
- 
+
  void
 -resize(Client *c, int x, int y, int w, int h, int interact)
 +resize(Client *c, int x, int y, int w, int h, int bw, int interact)
@@ -119,13 +119,13 @@ index 4465af1..3c94e4b 100644
 +	if (applysizehints(c, &x, &y, &w, &h, &bw, interact))
 +		resizeclient(c, x, y, w, h, bw);
  }
- 
+
  void
 -resizeclient(Client *c, int x, int y, int w, int h)
 +resizeclient(Client *c, int x, int y, int w, int h, int bw)
  {
  	XWindowChanges wc;
- 
+
 @@ -1281,7 +1288,7 @@ resizeclient(Client *c, int x, int y, int w, int h)
  	c->oldy = c->y; c->y = wc.y = y;
  	c->oldw = c->w; c->w = wc.width = w;
@@ -186,11 +186,11 @@ index 4465af1..3c94e4b 100644
 -	unsigned int i, n, h, mw, my, ty;
 +	unsigned int i, n, h, mw, my, ty, bw;
  	Client *c;
- 
+
  	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
  	if (n == 0)
  		return;
- 
+
 +	if (n == 1)
 +		bw = 0;
 +	else
@@ -222,4 +222,4 @@ index 4465af1..3c94e4b 100644
 +			borderpx, 0);
  	arrange(selmon);
  }
- 
+
