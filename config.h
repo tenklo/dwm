@@ -42,6 +42,7 @@ static const Rule rules[] = {
 	{ "zoom",                            NULL,     NULL,           0,         1,          0,          -1,        -1 },
 	{ "gpick",                           NULL,     NULL,           0,         1,          0,          -1,        -1 },
 	{ NULL,                              NULL,     "calc",         0,         1,          0,          -1,        -1 },
+	{ NULL,                              NULL,     "mpvfloat",     0,         1,          0,          -1,        -1 },
 	{ NULL,                              NULL,     "Event Tester", 0,         1,          0,           1,        -1 }, /* xev */
 };
 
