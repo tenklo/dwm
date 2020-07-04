@@ -4,7 +4,7 @@
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
-static const int showbar            = 0;        /* 0 means no bar */
+static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=16", "-misc-font awesome 5 brands regular-medium-r-normal--17-120-100-100-p-0-iso10646-1", "-misc-font awesome 5 free regular-medium-r-normal--17-120-100-100-p-0-iso10646-1", "-misc-font awesome 5 free solid-black-r-normal--17-120-100-100-p-0-iso10646-1"};
 static const char dmenufont[]       = "monospace:size=10";
@@ -59,7 +59,7 @@ static const Layout layouts[] = {
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
  	{ "[@]",      spiral },
- 	{ "[\\]",      dwindle },
+ 	{ "[\\]",     dwindle },
  	{ "|M|",      centeredmaster },
  	{ ">M>",      centeredfloatingmaster },
 };
@@ -123,7 +123,6 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_c,      quit,           {1} },
 	{ MODKEY|ControlMask|ShiftMask, XK_c,      quit,           {0} },
  	{ MODKEY,                       XK_u,      focusurgent,    {0} },
-	{ 0,                            HOLDKEY,   holdbar,        {0} },
 };
 
 /* button definitions */
