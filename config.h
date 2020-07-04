@@ -81,6 +81,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 
 #include "movestack.c"
+#include "focusurgent.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -120,6 +121,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
     { MODKEY|ShiftMask,             XK_c,      quit,           {1} },
 	{ MODKEY|ControlMask|ShiftMask, XK_c,      quit,           {0} },
+ 	{ MODKEY,                       XK_u,      focusurgent,    {0} },
 };
 
 /* button definitions */
