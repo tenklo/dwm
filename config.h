@@ -55,11 +55,11 @@ static const int attachdirection = 2;    /* 0 default, 1 above, 2 aside, 3 below
 #include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
+ 	{ "[\\]",     dwindle },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
  	{ "[@]",      spiral },
- 	{ "[\\]",     dwindle },
+	{ "[]=",      tile },    /* first entry is default */
  	{ "|M|",      centeredmaster },
  	{ ">M>",      centeredfloatingmaster },
 };
@@ -95,11 +95,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[4]} },
+	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[0]} },
  	{ MODKEY,                       XK_z,      setlayout,      {.v = &layouts[5]} },
  	{ MODKEY|ShiftMask,             XK_z,      setlayout,      {.v = &layouts[6]} },
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
@@ -148,4 +148,10 @@ static Button buttons[] = {
 static Signal signals[] = {
 	/* signum       function        argument  */
 	{ 1,            setlayout,      {.v = 0} },
+	{ 2,            setlayout,      {.v = 1} },
+	/*{ 3,            setlayout,      {.v = 2} },
+	{ 4,            setlayout,      {.v = 3} },
+	{ 5,            setlayout,      {.v = 4} },
+	{ 6,            setlayout,      {.v = 5} },
+	{ 7,            setlayout,      {.v = 6} },*/
 };
