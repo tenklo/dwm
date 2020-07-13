@@ -147,11 +147,11 @@ static Button buttons[] = {
 /* trigger signals using `xsetroot -name "fsignal:<signum>"` */
 static Signal signals[] = {
 	/* signum       function        argument  */
-	{ 1,            setlayout,      {.v = 0} },
-	{ 2,            setlayout,      {.v = 1} },
-	/*{ 3,            setlayout,      {.v = 2} },
-	{ 4,            setlayout,      {.v = 3} },
-	{ 5,            setlayout,      {.v = 4} },
-	{ 6,            setlayout,      {.v = 5} },
-	{ 7,            setlayout,      {.v = 6} },*/
+	{ 1,            setlayout,      {.v = &layouts[0]} },
+	{ 2,            setlayout,      {.v = &layouts[1]} },
+	{ 3,            setlayout,      {.v = &layouts[2]} },
+	{ 4,            setlayout,      {.v = &layouts[3]} },
+	{ 5,            setlayout,      {.v = &layouts[4]} },
+	{ 6,            setlayout,      {.v = &layouts[5]} },
+	{ 7,            setlayout,      {.v = &layouts[6]} },
 };
