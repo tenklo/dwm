@@ -9,7 +9,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=16", "-misc-font awesome 5 brands regular-medium-r-normal--17-120-100-100-p-0-iso10646-1", "-misc-font awesome 5 free regular-medium-r-normal--17-120-100-100-p-0-iso10646-1", "-misc-font awesome 5 free solid-black-r-normal--17-120-100-100-p-0-iso10646-1"};
 static const char dmenufont[]       = "monospace:size=10";
 static const char focussed[]        = "#0000ff";
-static const char col_gray1[]       = "#222222";
+static const char col_gray1[]       = "#2c2c2c";
+//static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
@@ -20,7 +21,7 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  focussed  },
 	[SchemeStatus]  = { "#ffffff", col_gray1,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
 	[SchemeTagsSel]  = {  "#ffffff", col_cyan,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
-    [SchemeTagsNorm]  = {   "#ffffff", col_gray1,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+	[SchemeTagsNorm]  = {   "#ffffff", col_gray1,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
     [SchemeInfoSel]  = {    "#ffffff", col_cyan,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
     [SchemeInfoNorm]  = {     "#ffffff", col_gray1,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
