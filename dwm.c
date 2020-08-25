@@ -203,6 +203,7 @@ static void monocle(Monitor *m);
 static void motionnotify(XEvent *e);
 static void movemouse(const Arg *arg);
 static void nametag(const Arg *arg);
+static void nametag(const Arg *arg);
 static Client *nexttagged(Client *c);
 static Client *nexttiled(Client *c);
 static void pop(Client *);
@@ -1435,7 +1436,7 @@ movemouse(const Arg *arg)
 
 void
 nametag(const Arg *arg) {
-	char *p, name[MAX_TAGNAME_LEN];
+	char *p, name[MAX_TAGLEN];
 	FILE *f;
 	int i;
 
@@ -1444,7 +1445,7 @@ nametag(const Arg *arg) {
 		fprintf(stderr, "dwm: popen 'dmenu < /dev/null' failed%s%s\n", errno ? ": " : "", errno ? strerror(errno) : "");
 		return;
 	}
-	if (!(p = fgets(name, MAX_TAGNAME_LEN, f)) && (i = errno) && ferror(f))
+	if (!(p = fgets(name, MAX_TAGLEN, f)) && (i = errno) && ferror(f))
 		fprintf(stderr, "dwm: fgets failed: %s\n", strerror(i));
 	if (pclose(f) < 0)
 		fprintf(stderr, "dwm: pclose failed: %s\n", strerror(errno));
@@ -1454,10 +1455,8 @@ nametag(const Arg *arg) {
 		*p = '\0';
 
 	for(i = 0; i < LENGTH(tags); i++)
-		if(selmon->tagset[selmon->seltags] & (1 << i)) {
-			sprintf(tags[i], TAG_PREPEND, i+1);
-			strcat(tags[i], name);
-		}
+		if(selmon->tagset[selmon->seltags] & (1 << i))
+			strcpy(tags[i], name);
 	drawbars();
 }
 
@@ -1780,6 +1779,7 @@ void
 setfullscreen(Client *c, int fullscreen)
 {
 	if (fullscreen && !c->isfullscreen) {
+        system("opacity 'off'");
 		XChangeProperty(dpy, c->win, netatom[NetWMState], XA_ATOM, 32,
 			PropModeReplace, (unsigned char*)&netatom[NetWMFullscreen], 1);
 		c->isfullscreen = 1;
@@ -1788,6 +1788,7 @@ setfullscreen(Client *c, int fullscreen)
 		resizeclient(c, c->mon->mx, c->mon->my, c->mon->mw, c->mon->mh, 0);
 		XRaiseWindow(dpy, c->win);
 	} else if (!fullscreen && c->isfullscreen){
+        system("opacity 'on'");
 		XChangeProperty(dpy, c->win, netatom[NetWMState], XA_ATOM, 32,
 			PropModeReplace, (unsigned char*)0, 0);
 		c->isfullscreen = 0;
