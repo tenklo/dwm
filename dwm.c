@@ -2558,9 +2558,11 @@ togglewarp()
 {
     if (warpactive == 1) {
         warpactive = 0;
+        system("notify-send --urgency=low 'dwm' 'warp deactivated'");
     }
     else {
         warpactive = 1;
+        system("notify-send --urgency=low 'dwm' 'warp activated'");
     }
 }
 
