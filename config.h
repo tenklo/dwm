@@ -35,19 +35,22 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                             instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",                            NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "jetbrains-phpstorm",              NULL,     NULL,           0,         1,          0,           1,        -1 },
-	{ "Thunderbird",                     NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "whatsapp-nativefier-d40211",      NULL,     NULL,           1 << 7,    0,          0,          -1,        -1 },
-	{ "TelegramDesktop",                 NULL,     NULL,           1 << 7,    0,          0,          -1,        -1 },
-	{ "Alacritty",                       NULL,     NULL,           0,         0,          1,          -1,        -1 },
-	{ "zoom",                            NULL,     NULL,           0,         1,          0,          -1,        -1 },
-	{ "gpick",                           NULL,     NULL,           0,         1,          0,          -1,        -1 },
-	{ NULL,                              NULL,     "calc",         0,         1,          0,          -1,        -1 },
-	{ NULL,                              NULL,     "mpvfloat",     0,         1,          0,          -1,        -1 },
-	{ NULL,                              NULL,     "Event Tester", 0,         1,          0,           1,        -1 }, /* xev */
+	/* class                             instance  title           tags mask  iscentered  isfloating  isterminal  noswallow  monitor */
+	{ "Gimp",                            NULL,     NULL,           0,         0,          1,          0,           0,        -1 },
+	{ "jetbrains-phpstorm",              NULL,     NULL,           0,         0,          1,          0,           1,        -1 },
+	{ "Thunderbird",                     NULL,     NULL,           1 << 8,    0,          0,          0,          -1,         0 },
+	{ "whatsapp-nativefier-d40211",      NULL,     NULL,           1 << 7,    0,          0,          0,          -1,         0 },
+	{ "TelegramDesktop",                 NULL,     NULL,           1 << 7,    0,          0,          0,          -1,         0 },
+	{ "Alacritty",                       NULL,     NULL,           0,         0,          0,          1,          -1,        -1 },
+	{ "zoom",                            NULL,     NULL,           0,         0,          1,          0,          -1,        -1 },
+	{ "gpick",                           NULL,     NULL,           0,         0,          1,          0,          -1,        -1 },
+	{ "jetbrains-studio",                NULL,     NULL,           0,         0,          0,          0,          -1,        -1 },
+	{ NULL,                              NULL,     "calc",         0,         0,          1,          0,          -1,        -1 },
+	{ NULL,                              NULL,     "mpvfloat",     0,         0,          1,          0,          -1,        -1 },
+	{ NULL,                              NULL,     "Event Tester", 0,         0,          1,          0,           1,        -1 }, /* xev */
 };
+
+int warpactive = 1;
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
@@ -132,6 +135,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_c,      quit,           {1} },
 	{ MODKEY|ControlMask|ShiftMask, XK_c,      quit,           {0} },
  	{ MODKEY,                       XK_u,      focusurgent,    {0} },
+ 	{ MODKEY,                       XK_w,      togglewarp,         },
 };
 
 /* button definitions */
