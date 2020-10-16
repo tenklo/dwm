@@ -28,7 +28,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 #define MAX_TAGLEN 16
-static char tags[][MAX_TAGLEN] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static char tags[][MAX_TAGLEN] = { "1", "2", "3:web", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -41,10 +41,17 @@ static const Rule rules[] = {
 	{ "Thunderbird",                     NULL,     NULL,           1 << 8,    0,          0,          0,          -1,         0 },
 	{ "whatsapp-nativefier-d40211",      NULL,     NULL,           1 << 7,    0,          0,          0,          -1,         0 },
 	{ "TelegramDesktop",                 NULL,     NULL,           1 << 7,    0,          0,          0,          -1,         0 },
+	{ "Signal",                          NULL,     NULL,           1 << 7,    0,          0,          0,          -1,         0 },
+	{ "threemawebqt",                    NULL,     NULL,           1 << 7,    0,          0,          0,          -1,         0 },
+	{ "firefox",                         NULL,     NULL,           1 << 2,    0,          0,          0,          -1,        -1 },
+	{ "Tor Browser",                     NULL,     NULL,           1 << 2,    0,          0,          0,          -1,        -1 },
+	{ "Bitwarden",                       NULL,     NULL,           1 << 6,    0,          0,          0,          -1,         0 },
+	{ "KeePassXC",                       NULL,     NULL,           1 << 6,    0,          0,          0,          -1,         0 },
 	{ "Alacritty",                       NULL,     NULL,           0,         0,          0,          1,          -1,        -1 },
 	{ "zoom",                            NULL,     NULL,           0,         0,          1,          0,          -1,        -1 },
-	{ "gpick",                           NULL,     NULL,           0,         0,          1,          0,          -1,        -1 },
+	{ "zoom",                            NULL,     "as_toolbar",   0,         1,          1,          0,          -1,        -1 },
 	{ "jetbrains-studio",                NULL,     NULL,           0,         0,          0,          0,          -1,        -1 },
+    { NULL,                              NULL,     "ranger",       0,         0,          0,          0,           1,        -1 },
 	{ NULL,                              NULL,     "calc",         0,         0,          1,          0,          -1,        -1 },
 	{ NULL,                              NULL,     "mpvfloat",     0,         0,          1,          0,          -1,        -1 },
 	{ NULL,                              NULL,     "Event Tester", 0,         0,          1,          0,           1,        -1 }, /* xev */
