@@ -48,7 +48,7 @@ static const Rule rules[] = {
 	{ "Bitwarden",                       NULL,     NULL,           1 << 6,    0,          0,          0,          -1,         0 },
 	{ "KeePassXC",                       NULL,     NULL,           1 << 6,    0,          0,          0,          -1,         0 },
 	{ "Alacritty",                       NULL,     NULL,           0,         0,          0,          1,          -1,        -1 },
-	{ "zoom",                            NULL,     NULL,           0,         0,          1,          0,          -1,        -1 },
+	{ "zoom",                            NULL,     NULL,           0,         0,          0,          0,          -1,        -1 },
 	{ "zoom",                            NULL,     "as_toolbar",   0,         1,          1,          0,          -1,        -1 },
 	{ "jetbrains-studio",                NULL,     NULL,           0,         0,          0,          0,          -1,        -1 },
     { NULL,                              NULL,     "ranger",       0,         0,          0,          0,           1,        -1 },
