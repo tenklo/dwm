@@ -50,6 +50,7 @@ static const Rule rules[] = {
 	{ "Alacritty",                       NULL,     NULL,           0,         0,          0,          1,          -1,        -1 },
 	{ "zoom",                            NULL,     NULL,           0,         0,          0,          0,          -1,        -1 },
 	{ "zoom",                            NULL,     "as_toolbar",   0,         1,          1,          0,          -1,        -1 },
+	{ "zoom",                            NULL,     "Participants", 0,         1,          1,          0,          -1,        -1 },
 	{ "jetbrains-studio",                NULL,     NULL,           0,         0,          0,          0,          -1,        -1 },
     { NULL,                              NULL,     "ranger",       0,         0,          0,          0,           1,        -1 },
 	{ NULL,                              NULL,     "calc",         0,         0,          1,          0,          -1,        -1 },
