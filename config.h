@@ -35,27 +35,27 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class                             instance  title           tags mask  iscentered  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",                            NULL,     NULL,           0,         0,          1,          0,           0,        -1 },
-	{ "jetbrains-phpstorm",              NULL,     NULL,           0,         0,          1,          0,           1,        -1 },
-	{ "Thunderbird",                     NULL,     NULL,           1 << 8,    0,          0,          0,          -1,         0 },
-	{ "whatsapp-nativefier-d40211",      NULL,     NULL,           1 << 7,    0,          0,          0,          -1,         0 },
-	{ "TelegramDesktop",                 NULL,     NULL,           1 << 7,    0,          0,          0,          -1,         0 },
-	{ "Signal",                          NULL,     NULL,           1 << 7,    0,          0,          0,          -1,         0 },
-	{ "threemawebqt",                    NULL,     NULL,           1 << 7,    0,          0,          0,          -1,         0 },
-	{ "firefox",                         NULL,     NULL,           1 << 2,    0,          0,          0,          -1,        -1 },
-	{ "Tor Browser",                     NULL,     NULL,           1 << 2,    0,          0,          0,          -1,        -1 },
-	{ "Bitwarden",                       NULL,     NULL,           1 << 6,    0,          0,          0,          -1,         0 },
-	{ "KeePassXC",                       NULL,     NULL,           1 << 6,    0,          0,          0,          -1,         0 },
-	{ "Alacritty",                       NULL,     NULL,           0,         0,          0,          1,          -1,        -1 },
-	{ "zoom",                            NULL,     NULL,           0,         0,          0,          0,          -1,        -1 },
-	{ "zoom",                            NULL,     "as_toolbar",   0,         1,          1,          0,          -1,        -1 },
-	{ "zoom",                            NULL,     "Participants", 0,         1,          1,          0,          -1,        -1 },
-	{ "jetbrains-studio",                NULL,     NULL,           0,         0,          0,          0,          -1,        -1 },
-    { NULL,                              NULL,     "ranger",       0,         0,          0,          0,           1,        -1 },
-	{ NULL,                              NULL,     "calc",         0,         0,          1,          0,          -1,        -1 },
-	{ NULL,                              NULL,     "mpvfloat",     0,         0,          1,          0,          -1,        -1 },
-	{ NULL,                              NULL,     "Event Tester", 0,         0,          1,          0,           1,        -1 }, /* xev */
+	/* class                             instance  title           tags mask  iscentered  isfloating  isterminal  noswallow  switchtotag    monitor */
+	{ "Gimp",                            NULL,     NULL,           0,         0,          1,          0,           0,        0,             -1 },
+	{ "jetbrains-phpstorm",              NULL,     NULL,           0,         0,          1,          0,           1,        0,             -1 },
+	{ "Thunderbird",                     NULL,     NULL,           1 << 8,    0,          0,          0,          -1,        0,              0 },
+	{ "whatsapp-nativefier-d40211",      NULL,     NULL,           1 << 7,    0,          0,          0,          -1,        0,              0 },
+	{ "TelegramDesktop",                 NULL,     NULL,           1 << 7,    0,          0,          0,          -1,        0,              0 },
+	{ "Signal",                          NULL,     NULL,           1 << 7,    0,          0,          0,          -1,        0,              0 },
+	{ "threemawebqt",                    NULL,     NULL,           1 << 7,    0,          0,          0,          -1,        0,              0 },
+	{ "firefox",                         NULL,     NULL,           1 << 2,    0,          0,          0,          -1,        0,             -1 },
+	{ "Tor Browser",                     NULL,     NULL,           1 << 2,    0,          0,          0,          -1,        0,             -1 },
+	{ "Bitwarden",                       NULL,     NULL,           1 << 6,    0,          0,          0,          -1,        0,              0 },
+	{ "KeePassXC",                       NULL,     NULL,           1 << 6,    0,          0,          0,          -1,        0,              0 },
+	{ "Alacritty",                       NULL,     NULL,           0,         0,          0,          1,          -1,        0,             -1 },
+	{ "zoom",                            NULL,     NULL,           0,         0,          0,          0,          -1,        0,             -1 },
+	{ "zoom",                            NULL,     "as_toolbar",   0,         1,          1,          0,          -1,        0,             -1 },
+	{ "zoom",                            NULL,     "Participants", 0,         1,          1,          0,          -1,        0,             -1 },
+	{ "jetbrains-studio",                NULL,     NULL,           0,         0,          0,          0,          -1,        0,             -1 },
+    { NULL,                              NULL,     "ranger",       0,         0,          0,          0,           1,        0,             -1 },
+	{ NULL,                              NULL,     "calc",         0,         0,          1,          0,          -1,        0,             -1 },
+	{ NULL,                              NULL,     "mpvfloat",     0,         0,          1,          0,          -1,        0,             -1 },
+	{ NULL,                              NULL,     "Event Tester", 0,         0,          1,          0,           1,        0,             -1 }, /* xev */
 };
 
 int warpactive = 1;
