@@ -41,6 +41,7 @@ static const Rule rules[] = {
 	{ "Thunderbird",                     NULL,     NULL,           1 << 8,    0,          0,          0,          -1,        0,              0 },
 	{ "whatsapp-nativefier-d40211",      NULL,     NULL,           1 << 7,    0,          0,          0,          -1,        1,              0 },
 	{ "TelegramDesktop",                 NULL,     NULL,           1 << 7,    0,          0,          0,          -1,        1,              0 },
+	{ "Alacritty",                       NULL,     "telegram",     1 << 7,    0,          0,          0,          -1,        1,              0 },
 	{ "Signal",                          NULL,     NULL,           1 << 7,    0,          0,          0,          -1,        1,              0 },
 	{ "threemawebqt",                    NULL,     NULL,           1 << 7,    0,          0,          0,          -1,        1,              0 },
 	{ "firefox",                         NULL,     NULL,           1 << 2,    0,          0,          0,          -1,        1,             -1 },
