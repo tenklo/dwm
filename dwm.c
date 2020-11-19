@@ -206,7 +206,6 @@ static void monocle(Monitor *m);
 static void motionnotify(XEvent *e);
 static void movemouse(const Arg *arg);
 static void nametag(const Arg *arg);
-static void nametag(const Arg *arg);
 static Client *nexttagged(Client *c);
 static Client *nexttiled(Client *c);
 static void pop(Client *);
