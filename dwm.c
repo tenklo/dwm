@@ -353,6 +353,7 @@ applyrules(Client *c)
 			if (m)
 				c->mon = m;
  			if (r->switchtotag) {
+                selmon = c->mon;
 				Arg a = { .ui = r->tags };
 				c->switchtotag = selmon->tagset[selmon->seltags];
 				view(&a);
@@ -2174,10 +2175,10 @@ unmanage(Client *c, int destroyed)
 		arrange(m);
 		focus(NULL);
 		updateclientlist();
-    	if (c->switchtotag) {
-     		Arg a = { .ui = c->switchtotag };
-    		view(&a);
-    	}
+    	/* if (c->switchtotag) { */
+     		/* Arg a = { .ui = c->switchtotag }; */
+    	/* 	view(&a); */
+    	/* } */
 	}
 }
 
