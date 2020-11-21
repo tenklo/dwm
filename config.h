@@ -72,11 +72,11 @@ static const int attachdirection = 2;    /* 0 default, 1 above, 2 aside, 3 below
 #include "gaplessgrid.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
- 	{ "[\\]",     dwindle },
+	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
  	{ "[@]",      spiral },
-	{ "[]=",      tile },    /* first entry is default */
+ 	{ "[\\]",     dwindle },
  	{ "|M|",      centeredmaster },
  	{ ">M>",      centeredfloatingmaster },
     { "###",      gaplessgrid },
@@ -116,11 +116,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
     { MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[4]} },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[4]} },
  	{ MODKEY,                       XK_z,      setlayout,      {.v = &layouts[5]} },
  	{ MODKEY|ShiftMask,             XK_z,      setlayout,      {.v = &layouts[6]} },
     { MODKEY,                       XK_g,      setlayout,      {.v = &layouts[7]} },
