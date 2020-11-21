@@ -51,7 +51,7 @@ fibonacci(Monitor *mon, int s) {
 				nw = mon->ww - nw;
 			i++;
 		}
-		resize(c, nx, ny, nw - 2 * c->bw, nh - 2 * c->bw, c->bw, False);
+		resize(c, nx, ny, nw - 2 * c->bw, nh - 2 * c->bw, c->bw);
 		/*resize(c, nx, ny, nw - 2 * c->bw, nh - 2 * c->bw, False); how it was before i tried to get things working for the smart borders patch */
 	}
 }

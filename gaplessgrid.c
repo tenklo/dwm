@@ -26,7 +26,7 @@ gaplessgrid(Monitor *m) {
 		ch = rows ? m->wh / rows : m->wh;
 		cx = m->wx + cn*cw;
 		cy = m->wy + rn*ch;
-		resize(c, cx, cy, cw - 2 * c->bw, ch - 2 * c->bw, borderpx,0);
+		resize(c, cx, cy, cw - 2 * c->bw, ch - 2 * c->bw, borderpx);
 		rn++;
 		if(rn >= rows) {
 			rn = 0;
