@@ -243,7 +243,6 @@ static void tagtoright(const Arg *arg);
 static void tile(Monitor *);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
-static void togglefullscr(const Arg *arg);
 static void toggletag(const Arg *arg);
 static void toggleview(const Arg *arg);
 static void togglewarp();
@@ -1837,7 +1836,7 @@ void
 setfullscreen(Client *c, int fullscreen)
 {
 	if (fullscreen && !c->isfullscreen) {
-        system("opacity 'off'");
+        /* system("opacity 'off'"); */
 		XChangeProperty(dpy, c->win, netatom[NetWMState], XA_ATOM, 32,
 			PropModeReplace, (unsigned char*)&netatom[NetWMFullscreen], 1);
 		c->isfullscreen = 1;
@@ -1849,7 +1848,7 @@ setfullscreen(Client *c, int fullscreen)
 
 		XRaiseWindow(dpy, c->win);
 	} else if (!fullscreen && c->isfullscreen){
-        system("opacity 'on'");
+        /* system("opacity 'on'"); */
 		XChangeProperty(dpy, c->win, netatom[NetWMState], XA_ATOM, 32,
 			PropModeReplace, (unsigned char*)0, 0);
 		c->isfullscreen = 0;
@@ -2124,13 +2123,6 @@ togglefloating(const Arg *arg)
 		resize(selmon->sel, selmon->sel->x, selmon->sel->y,
 			selmon->sel->w, selmon->sel->h, 0);
 	arrange(selmon);
-}
-
-void
-togglefullscr(const Arg *arg)
-{
-  if(selmon->sel)
-    setfullscreen(selmon->sel, !selmon->sel->isfullscreen);
 }
 
 void
