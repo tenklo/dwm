@@ -2,7 +2,6 @@ static void
 focusurgent(const Arg *arg) {
 	Client *c;
 	int i;
-	/* for (m = mons; m && m->num != r->monitor; m = m->next); */
 	for(c=selmon->clients; c && !c->isurgent; c=c->next);
 	/* for(c=mons->clients; c && !c->isurgent; c=c->next); */
 	if(c) {
