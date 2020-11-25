@@ -9,7 +9,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char statussep         = ';';      /* separator between status bars */
 static const char *fonts[]          = { "monospace:size=16", "-misc-font awesome 5 brands regular-medium-r-normal--17-120-100-100-p-0-iso10646-1", "-misc-font awesome 5 free regular-medium-r-normal--17-120-100-100-p-0-iso10646-1", "-misc-font awesome 5 free solid-black-r-normal--17-120-100-100-p-0-iso10646-1"};
 static const char dmenufont[]       = "monospace:size=10";
-static const char focussed[]        = "#000000";
+static const char focussed[]        = "#800000";
 static const char col_gray1[]       = "#000000";
 //static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -42,6 +42,7 @@ static const Rule rules[] = {
 	{ "Thunderbird",                     NULL,     NULL,           1 << 8,    0,          0,          0,          -1,        0,              0 },
 	{ "whatsapp-nativefier-d40211",      NULL,     NULL,           1 << 7,    0,          0,          0,          -1,        1,              0 },
 	{ "TelegramDesktop",                 NULL,     NULL,           1 << 7,    0,          0,          0,          -1,        1,              0 },
+	{ "Pidgin",                          NULL,     NULL,           1 << 7,    0,          0,          0,          -1,        1,              0 },
 	{ "Alacritty",                       NULL,     "telegram",     1 << 7,    0,          0,          0,          -1,        1,              0 },
 	{ "Signal",                          NULL,     NULL,           1 << 7,    0,          0,          0,          -1,        1,              0 },
 	{ "threemawebqt",                    NULL,     NULL,           1 << 7,    0,          0,          0,          -1,        1,              0 },
