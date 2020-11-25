@@ -18,7 +18,7 @@ static const char col_gray4[]       = "#eeeeee";
 static const char col_pink[]        = "#C100B8";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+	[SchemeNorm] = {  "#F8F8F2", col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_pink,  focussed  },
 	[SchemeStatus]  = { "#F8F8F2", col_gray1,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
 	[SchemeTagsSel]  = {  "#F8F8F2", col_pink,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
@@ -62,6 +62,8 @@ static const Rule rules[] = {
 };
 
 int warpactive = 1;
+
+char esunusedtext[] = "der andere";
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */

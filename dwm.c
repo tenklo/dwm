@@ -956,10 +956,13 @@ drawbar(Monitor *m)
 
 	if (m == selmon) { /* extra status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
-		sw = TEXTW(estext) - lrpad + 10; /* 2px right padding */
+		sw = TEXTW(estext) - lrpad + 10; /* 10 right padding */
 		drw_text(drw, 0, 0, m->ww, bh, m->ww - sw, estext, 0);
-		drw_map(drw, m->extrabarwin, 0, 0, m->ww, bh);
-	}
+	} else {
+		sw = TEXTW(esunusedtext) - lrpad + 10; /* 10 right padding */
+		drw_text(drw, 0, 0, m->ww, bh, m->ww - sw, esunusedtext,0);
+    }
+	drw_map(drw, m->extrabarwin, 0, 0, m->ww, bh);
 }
 
 void
