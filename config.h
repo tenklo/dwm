@@ -16,10 +16,12 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_pink[]        = "#C100B8";
+static const char col_urgborder[]   = "#ff0000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = {  "#F8F8F2", col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_pink,  focussed  },
+	[SchemeUrg]  = { col_gray4, col_pink,  col_urgborder  },
 	[SchemeStatus]  = { "#F8F8F2", col_gray1,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
 	[SchemeTagsSel]  = {  "#F8F8F2", col_pink,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
 	[SchemeTagsNorm]  = {   "#F8F8F2", col_gray1,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
