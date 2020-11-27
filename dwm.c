@@ -747,11 +747,15 @@ drawbar(Monitor *m)
 	}
 	drw_map(drw, m->barwin, 0, 0, m->ww, bh);
 
-	if (m == selmon) { /* extra status is only drawn on selected monitor */
+    if (m == selmon) { /* extra status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
-		drw_text(drw, 0, 0, mons->ww, bh, 0, estext, 0);
-		drw_map(drw, m->extrabarwin, 0, 0, m->ww, bh);
-	}
+		sw = TEXTW(estext) - lrpad + 10; /* 10 right padding */
+		drw_text(drw, 0, 0, m->ww, bh, m->ww - sw, estext, 0);
+	} else {
+		sw = TEXTW(esunusedtext) - lrpad + 10; /* 10 right padding */
+		drw_text(drw, 0, 0, m->ww, bh, m->ww - sw, esunusedtext,0);
+    }
+	drw_map(drw, m->extrabarwin, 0, 0, m->ww, bh);
 }
 
 void
