@@ -6,17 +6,21 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char statussep         = ';';      /* separator between status bars */
-static const char *fonts[]          = { "monospace:size=16" };
+static const char *fonts[]          = {
+	"monospace:size=16",
+	"JoyPixels:pixelsize=16:antialias=true:autohint=true"
+};
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
-static const char *colors[][3]      = {
+static char normbgcolor[]       = "#000000";
+static char normbordercolor[]       = "#444444";
+static char normfgcolor[]       = "#bbbbbb";
+static char selfgcolor[]       = "#eeeeee";
+static char selbordercolor[]        = "#C100B8";
+static char selbgcolor[]            =  "#C100B8";
+static char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+    [SchemeNorm] = {  normfgcolor, normbgcolor, normbordercolor },
+	[SchemeSel]  = { selfgcolor, selbordercolor,  selbordercolor  },
 };
 
 /* tagging */
@@ -62,13 +66,14 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	/* { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } }, */
+    { MODKEY|ControlMask,           XK_F5,     xrdb,           {.v = NULL } },
 	{ Mod1Mask,                     XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_n,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
