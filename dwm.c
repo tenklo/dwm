@@ -247,6 +247,7 @@ static void togglefloating(const Arg *arg);
 static void toggletag(const Arg *arg);
 static void toggleview(const Arg *arg);
 static void togglewarp();
+static void toggleseltagset();
 static void unfocus(Client *c, int setfocus);
 static void unmanage(Client *c, int destroyed);
 static void unmapnotify(XEvent *e);
@@ -1971,6 +1972,19 @@ toggleview(const Arg *arg)
 }
 
 void
+toggleseltagset ()
+{
+    if (toggleseltagsetactive  == 1) {
+        toggleseltagsetactive = 0;
+        system("notify-send --urgency=low 'dwm' 'toggle selected tagset deactivated'");
+    }
+    else {
+        toggleseltagsetactive = 1;
+        system("notify-send --urgency=low 'dwm' 'toggle selected tagset activated'");
+    }
+}
+
+void
 togglewarp()
 {
     if (warpactive == 1) {
@@ -2317,22 +2331,24 @@ view(const Arg *arg)
 
 	if ((arg->ui & TAGMASK) == selmon->tagset[selmon->seltags])
 		return;
-	selmon->seltags ^= 1; /* toggle sel tagset */
-	if (arg->ui & TAGMASK) {
-		selmon->tagset[selmon->seltags] = arg->ui & TAGMASK;
-		selmon->pertag->prevtag = selmon->pertag->curtag;
+    if (toggleseltagsetactive == 1) {
+        selmon->seltags ^= 1; /* toggle sel tagset */
+    }
+        if (arg->ui & TAGMASK) {
+            selmon->tagset[selmon->seltags] = arg->ui & TAGMASK;
+            selmon->pertag->prevtag = selmon->pertag->curtag;
 
-		if (arg->ui == ~0)
-			selmon->pertag->curtag = 0;
-		else {
-			for (i = 0; !(arg->ui & 1 << i); i++) ;
-			selmon->pertag->curtag = i + 1;
-		}
-	} else {
-		tmptag = selmon->pertag->prevtag;
-		selmon->pertag->prevtag = selmon->pertag->curtag;
-		selmon->pertag->curtag = tmptag;
-	}
+            if (arg->ui == ~0)
+                selmon->pertag->curtag = 0;
+            else {
+                for (i = 0; !(arg->ui & 1 << i); i++) ;
+                selmon->pertag->curtag = i + 1;
+            }
+        } else {
+            tmptag = selmon->pertag->prevtag;
+            selmon->pertag->prevtag = selmon->pertag->curtag;
+            selmon->pertag->curtag = tmptag;
+        }
 
 	selmon->nmaster = selmon->pertag->nmasters[selmon->pertag->curtag];
 	selmon->mfact = selmon->pertag->mfacts[selmon->pertag->curtag];
