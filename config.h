@@ -40,6 +40,7 @@ static const Rule rules[] = {
 	{ NULL,      NULL,     "calc",         0,         1,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
     { "Thunderbird", NULL, NULL,           1 << 8,    0,          0,           0,         0 },
+    { NULL,      NULL,     "neomutt",      1 << 8,    0,          0,           0,         0 },
 
 };
 
