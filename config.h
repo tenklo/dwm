@@ -46,7 +46,6 @@ static const Rule rules[] = {
 
 char esunusedtext[] = "unfocussed";
 int warpactive = 1;
-int toggleseltagsetactive = 1;
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
@@ -120,7 +119,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_c,      quit,           {0} },
     { MODKEY,                       XK_w,      togglewarp,         },
-    { MODKEY|ShiftMask,             XK_w,      toggleseltagset,    },
 	{ MODKEY,                       XK_u,      focusurgent,    {0} },
 };
 
