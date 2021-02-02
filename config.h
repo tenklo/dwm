@@ -37,15 +37,15 @@ static const Rule rules[] = {
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ "Element", NULL,     NULL,           1 << 7,    0,          0,          -1,        -1 },
-	{ "Signal", NULL,      NULL,           1 << 7,    0,          0,          -1,         0 },
-	{ "TelegramDesktop", NULL, NULL,       1 << 7,    0,          0,          -1,         0 },
-	{ "whatsapp-nativefier", NULL, NULL,   1 << 7,    0,          0,          -1,         0 },
+	{ "Signal", NULL,      NULL,           1 << 7,    0,          0,          -1,         2 },
+	{ "TelegramDesktop", NULL, NULL,       1 << 7,    0,          0,          -1,         2 },
+	{ "whatsapp-nativefier", NULL, NULL,   1 << 7,    0,          0,          -1,         2 },
 	{ "St",      NULL,     "ranger",       0,         0,          1,           1,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ "XTerm",   NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
-    { "Thunderbird", NULL, NULL,           1 << 8,    0,          0,           0,         0 },
-    { NULL,      NULL,     "neomutt",      1 << 8,    0,          0,           0,         0 },
+    { "Thunderbird", NULL, NULL,           1 << 8,    0,          0,           0,         2 },
+    { NULL,      NULL,     "neomutt",      1 << 8,    0,          0,           0,         2 },
 
 };
 
