@@ -36,7 +36,6 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "Element", NULL,     NULL,           1 << 7,    0,          0,          -1,        -1 },
 	{ "Signal",  NULL,     NULL,           1 << 7,    0,          0,          -1,         2 },
 	{ "TelegramDesktop",   NULL, NULL,     1 << 7,    0,          0,          -1,         2 },
 	{ "whatsapp-nativefier", NULL, NULL,   1 << 7,    0,          0,          -1,         2 },
