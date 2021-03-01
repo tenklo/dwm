@@ -39,7 +39,7 @@ static const Rule rules[] = {
 	{ "Signal",  NULL,     NULL,           1 << 7,    0,          0,          -1,         1 },
 	{ "TelegramDesktop",   NULL, NULL,     1 << 7,    0,          0,          -1,         1 },
 	{ "whatsapp-nativefier", NULL, NULL,   1 << 7,    0,          0,          -1,         1 },
-	{ NULL,      NULL,     "calcurse",     1 << 6,    0,          0,          -1,         0 },
+	{ NULL,      NULL,     "calcurse",     1 << 6,    0,          0,          -1,        -1 },
 	{ "St",      NULL,     "ranger",       0,         0,          1,           1,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ "XTerm",   NULL,     NULL,           0,         0,          1,           0,        -1 },
