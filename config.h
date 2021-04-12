@@ -36,16 +36,16 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "Signal",  NULL,     NULL,           1 << 7,    0,          0,          -1,         2 },
-	{ "TelegramDesktop",   NULL, NULL,     1 << 7,    0,          0,          -1,         2 },
-	{ "whatsapp-nativefier", NULL, NULL,   1 << 7,    0,          0,          -1,         2 },
-	{ NULL,      NULL,     "calcurse",     1 << 6,    0,          0,          -1,         0 },
+	{ "Signal",  NULL,     NULL,           1 << 7,    0,          0,          -1,         1 },
+	{ "TelegramDesktop",   NULL, NULL,     1 << 7,    0,          0,          -1,         1 },
+	{ "whatsapp-nativefier", NULL, NULL,   1 << 7,    0,          0,          -1,         1 },
+	{ NULL,      NULL,     "calcurse",     1 << 6,    0,          0,          -1,        -1 },
 	{ "St",      NULL,     "ranger",       0,         0,          1,           1,        -1 },
 	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ "XTerm",   NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
-    { "Thunderbird", NULL, NULL,           1 << 8,    0,          0,           0,         2 },
-    { NULL,      NULL,     "neomutt",      1 << 8,    0,          0,           0,         2 },
+    { "Thunderbird", NULL, NULL,           1 << 8,    0,          0,           0,         1 },
+    { NULL,      NULL,     "neomutt",      1 << 8,    0,          0,           0,         1 },
 
 };
 
